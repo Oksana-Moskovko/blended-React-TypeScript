@@ -1,8 +1,24 @@
-function getFirstElement<T>(arr: T[]): T {
-  console.log(arr[0]);
-  return arr[0];
+// function getFirstElement<T>(arr: T[]): T {
+//   console.log(arr[0]);
+//   return arr[0];
+// }
+
+// getFirstElement<number>([1, 2, 3]);            // 1
+// getFirstElement<string>(["a", "b", "c"]);     // "a"
+// getFirstElement<boolean>([true, false, true]); // true
+
+interface User {
+  name: string;
+  address?: {
+    city: string;
+  }
 }
 
-getFirstElement<number>([1, 2, 3]);            // 1
-getFirstElement<string>(["a", "b", "c"]);     // "a"
-getFirstElement<boolean>([true, false, true]); // true
+const user: User = {
+  name: "Alice",
+  address: {
+    city: "Kyiv"
+  }
+};
+
+console.log(user.address?.city);
